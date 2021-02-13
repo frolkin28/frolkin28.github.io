@@ -73,4 +73,56 @@ footer {
     background-color: black;
     margin-top: 500px;
     color: #ffffffff;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-info {
+    flex: 1;
+}
+
+.social-media {
+    flex: 1;
+}
+
+/* font awesome icons */
+
+.fa {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    font-size: 100px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+.fa:hover {
+    opacity: 0.6;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-telegram {
+    background: #125688;
+    color: white;
+}
+
+.fa-instagram {
+    background: #be7507;  
+    color: white;  
+}
+
+.fa-youtube {
+    background: #bb0000;  
+    color: white; 
 }
