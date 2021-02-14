@@ -172,10 +172,9 @@ footer {
 .banner {
     display: flex;
     width: 57%;
-    /* padding: 240px 0px; */
     padding: 380px 80px 50px 0px;
     margin: 50px auto;
-    background: url('../img/banner.jpg');
+    background: url('../img/main/banner.jpg');
     background-color: cover;
     overflow: hidden;
     text-align: end;
