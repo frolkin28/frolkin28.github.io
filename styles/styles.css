@@ -182,6 +182,7 @@ footer {
     font-family: sans-serif;
     justify-content: flex-end;
     font-size: 30px;
+    border-radius: 2%;
 }
 
 .banner-button {
