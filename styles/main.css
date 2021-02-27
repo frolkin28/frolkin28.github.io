@@ -49,10 +49,12 @@
     display: inline-block;
     margin: 2px 10px;
     font-size: 20px;
+    border-bottom: 2px solid;
+    border-color: white;
 }
 
 .nav-block li:hover {
-    border-bottom: 2px solid;
+    border-color: black;
 }
 
 .cart {
