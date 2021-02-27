@@ -59,7 +59,7 @@
     margin: auto;
 }
 
-.keep-me-log-in p {
+.keep-me-log-in label {
     margin: 0px;
     flex: 10;
     text-align: start;
