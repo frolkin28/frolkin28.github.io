@@ -1,0 +1,92 @@
+.sing-in-block {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid;
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+}
+
+.sing-in-block p {
+    text-align: center;
+    margin: 20px;
+}
+
+.sign-in-form {
+    width: 60%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-in-form input {
+    letter-spacing: 2px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 85%;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+
+.sign-in-form button{
+    margin: 30px auto;
+    padding: 8px;
+    width: 90%;
+    background-color: black;
+    color: white;
+    border: 0px;
+    border-radius: 3%;
+    letter-spacing: 1px;
+}
+
+.sign-in-options {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 15px;
+}
+
+.keep-me-log-in{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    margin: 3px;
+}
+
+.keep-me-log-in input {
+    flex: 1;
+    margin: auto;
+}
+
+.keep-me-log-in p {
+    margin: 0px;
+    flex: 10;
+    text-align: start;
+}
+
+.forget-password {
+    flex: 1;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.forget-password a {
+    margin: 3px auto;
+}
+
+.dont-have-account {
+    display: flex;
+    flex-direction: row;
+    padding: 3px 10px;
+}
+
+.dont-have-account p {
+    margin: 0;
+    flex: 2;
+}
+
+.dont-have-account a {
+    margin: 0;
+    flex: 1;
+}
