@@ -74,9 +74,14 @@
     font-family: 'Courier New';
 }
 
+.advert a {
+    text-decoration: none;
+    color: black;
+}
+
 footer {
     background-color: black;
-    margin-top: 500px;
+    margin-top: 200px;
     color: #ffffffff;
     display: flex;
     flex-direction: column;
@@ -198,3 +203,28 @@ footer {
     padding: 30px;
     color: white;
 }
+
+.main-new-colletion {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.new-collection-item {
+    flex: 1;
+}
+
+.new-collection-item-spec {
+    display: flex;
+    flex-direction: row;
+}
+
+.new-collection-item-title {
+    flex: 1;
+}
+
+.new-collection-item-price {
+    flex: 1;
+}
+
