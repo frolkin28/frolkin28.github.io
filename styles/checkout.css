@@ -1,0 +1,52 @@
+.checkout {
+    display: flex;
+    flex-direction: row;
+}
+
+.delivery-block {
+    flex: 3;
+    margin-left: 20%;
+    background-color: #E8E8E8;
+    border-radius: 3%;
+}
+
+.order-info-block {
+    flex: 2;
+    margin-right: 20%;
+    margin-left: 10px;
+    border: 1px solid;
+    border-color: #DCDCDC;
+}
+
+.delivery-header {
+    background-color: black;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.order-info-header {
+    background-color: #DCDCDC;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.delivery-block form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    margin: 15px;
+    padding: 15px;
+}
+
+.delivery-block input {
+    margin-left: 5px;
+}
+
+.inputs {
+    margin: 10px 0px;
+}
