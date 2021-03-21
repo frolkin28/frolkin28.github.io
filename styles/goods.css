@@ -1,74 +1,143 @@
-.flex-container {
-	display: flex;
+button {
+	border: none;
+	color: black;
+	padding: 18px 50px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
 }
 
-.flex-container > div {
-	padding: 20px;
+button:hover {
+	background-color: #e7e7e7;
+}
+
+button.button_cart:hover {
+	background-color: #e7e7e7;
+	color: black;
+	border: 0.5px solid #555555;
+}
+
+*{
+	font-style:normal;
+	margin: 0;
+    padding: 0;
+}
+P{
+	font-size: 65%;
+}
+
+P[price]{
+	font-style:italic;
+	font-size: 65%;
+	margin-left: 300%;
+}
+
+dfn:after{
+  content: "♥" ;
+}
+
+.flex-container {
+	flex-direction: row;
+	padding-left: 60px;
+	padding-top: 10px;
+	display: flex;
+	font-size: 30px;
+}
+
+.flex-container_size {
+	flex-direction: row;
+	padding-left: 60px;
+	padding-top: 10px;
+	display: flex;
 	font-size: 30px;
 }
 
 .flex-container_c {
-	padding: 20px;
-	display: flex;
+	
 	flex-direction: column;
+	display: flex;
+}
+
+.flex-container_c_size {
+	
+	flex-direction: column;
+	display: flex;
 }
 
 .button_size {
-    background-color: #e7e7e7;
-    border: none;
-    color: black;
-    padding: 18px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    cursor: pointer;
-	width: 150px;
+    background-color: #FFFFFF;
+	border: 0.5px solid #555555;
+    font-size: 65%;
+    margin: 4px;
+	width: 90%;
 	border-radius: 5px;
 }
 
 .button_cart {
-  background-color: #000000;
-  border: none;
-  color: white;
-  padding: 18px 50px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25px;
-  border-radius: 30px;
-  cursor: pointer;
-  width: 350px;
-  margin: 30px 70px;
+	background-color: #000000;
+	color: white;
+	font-size: 65%;
+	border-radius: 30px;
+	width :70%;
+	margin-left:8%;
+	margin-top: 30px;
 }
 
 .button_fav {
-  background-color: #FFFFFF;
-  border: 2px solid #555555;
-  color: black;
-  padding: 18px 50px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 25px;
-  border-radius: 30px;
-  cursor: pointer;
-  width: 350px;
-  margin: 0px 70px;
+	background-color: #FFFFFF;
+	border: 2px solid #555555;
+	font-size: 65%;
+	border-radius: 30px;
+	width :70%;
+	margin-left: 8%;
+	margin-top: 15px;
 }
 
 .button_rev {
-  background-color: #e7e7e7;
-  border: none;
-  color: black;
-  padding: 18px 50px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  cursor: pointer;
-  width: 450px;
-  margin: 70px 10px;
-  border-radius: 10px;
+	background-color: #e7e7e7;
+	text-align: left;
+	font-size: 65%;
+	margin-left: 5%;
+	margin-top: 50px;
+	border-radius: 10px;
+	width :85%;
+}
+
+#image {
+	padding-left: 4%;
+	padding-top: 10px;
+	width :95%;
+	height : auto;
+}
+
+#name { 
+	font-weight: 600;
+	font-size: 85%;
+	padding-left: 10%;
+	padding-top: 10px;
+	width :65%;
+}
+ 
+#text {
+	padding-left: 10%;
+	padding-top: 25px;
+	width :65%;
+}
+
+@media screen and (max-width: 768px) {
+	.flex-container {
+		padding-left: 10%;
+		flex-direction: column;
+	}
+	
+	#image {
+		padding-left: 2%;
+		width :80%;
+	}
+	
+	P[price]{
+		font-size: 65%;
+		margin-left: 0%;
+	}
 }
