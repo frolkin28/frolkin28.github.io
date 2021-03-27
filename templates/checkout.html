@@ -4,16 +4,21 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nike shop</title>
     <link rel="icon" type="image/x-icon" href="../img/main/favicon.ico" />
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/checkout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
 </head>
 
 <body>
-    <div class="header">
+
+    <div class=" header">
+
         <div class="auth-block">
             <ul>
                 <li>
@@ -25,32 +30,50 @@
                 </li>
             </ul>
         </div>
-        <header class="nav-block">
-            <h1 class="title">Nike shop</h1>
-            <ul>
-                <li>
-                    <h5>Men</h5>
-                </li>
-                <li>
-                    <h5>Women</h5>
-                </li>
-                <li>
-                    <h5>Kids</h5>
-                </li>
-                <li>
-                    <h5>Unisex</h5>
-                </li>
-                <li>
-                    <h5>Collections</h5>
-                </li>
-            </ul>
-            <div class="cart">
-                <img alt="cart" src="../img/main/cart.png" height="30" width="30">
-            </div>
+        <header>
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <h1 class="title">Nike shop</h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="item">
+                            <h5>Men</h5>
+                        </li>
+                        <li class="item">
+                            <h5>Women</h5>
+                        </li>
+                        <li class="item">
+                            <h5>Kids</h5>
+                        </li>
+
+                        <li class="item">
+                            <h5>Unisex</h5>
+                        </li>
+
+                        <li class="item">
+                            <h5>Collections</h5>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="cart">
+                    <img alt="cart" src="../img/main/cart.png" height="30" width="30">
+                </div>
+
+            </nav>
+
+
         </header>
         <div class="advert">
             <h5>New collection is alreaady on site</h5>
         </div>
+    </div>
     </div>
 
 
@@ -84,7 +107,7 @@
                         <option value="Card">Card</option>
                         <option value="Cash">Cash</option>
                         <option value="Nova Poshta payment">Nova Poshta payment</option>
-                      </select>
+                    </select>
                 </div>
                 <div class="inputs">
                     <label for="delivary-options">Delivery</label>
@@ -92,7 +115,7 @@
                         <option value="NP">Nova Poshta</option>
                         <option value="JT">Justin</option>
                         <option value="UP">Ukr Poshta</option>
-                      </select>
+                    </select>
                 </div>
                 <div class="inputs">
                     <label for="city">City</label>
@@ -114,10 +137,58 @@
         </div>
         <div class="order-info-block">
             <div class="order-info-header">
-                <h4>Order info</h4>
+                <h4>ORDER INFO</h4>
             </div>
-            <div>Price: N</div>
-            <div>Cart items</div>
+            <div class="order-info-first">
+                <div class="order-info-first-text">
+                    <p>Price: </p>
+                    <p>529,00 $</p>
+                </div>
+                <div class="order-info-first-text">
+                    <p>delivery</p>
+                    <p>75,00$</p>
+                </div>
+                <div class="order-info-first-text result">
+                    <b>RESULT</b>
+                    <b class="order-info-orange">604,00$</b>
+                </div>
+            </div>
+
+            <div class="order-info-header">
+                <h4>GOODS IN THE BASKET: (1)</h4>
+            </div>
+            <div class="order-info-first">
+                <div class="order-info-first-text">
+                    <h5>Estimated delivery time: 3/3-28/3 </h5>
+
+                </div>
+                <div class="order-info-basket">
+                    <div class="order-info-img">
+                        <img src="../img/main/close.jpg" width="60%" alt="close">
+                    </div>
+                    <div class="order-info-basket-text">
+                        <p>Nike Therma Men's Full Zip Training Hoodie</p>
+                        <p> <b>Vendor code: </b>CU6231-063</p>
+                        <p><b>Size:</b> M</p>
+                        <p><b>Amount:</b> 1</p>
+                        <p class="order-info-orange size">529,00$</p>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="order-info-change">
+                    <a href="#">Change shopping list</a>
+                </div>
+
+                <!-- <div class="order-info-first-text result">
+                    <b>RESULT</b>
+                    <b class="order-info-orange">604,00$</b>
+                </div> -->
+            </div>
+
+
+
+
         </div>
     </div>
 
@@ -148,6 +219,16 @@
         </div>
 
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

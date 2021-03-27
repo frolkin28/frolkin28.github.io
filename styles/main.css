@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -60,8 +61,10 @@
 .cart {
     flex: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row-reverse;
+    
+    /* justify-content: center;
+    align-items: center; */
 }
 
 .advert {
@@ -227,4 +230,6 @@ footer {
 .new-collection-item-price {
     flex: 1;
 }
+
+
 
