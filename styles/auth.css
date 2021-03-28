@@ -13,7 +13,7 @@
 }
 
 .auth-form {
-    width: 60%;
+    width: 90%;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
 .auth-form button{
     margin: 30px auto;
     padding: 8px;
-    width: 90%;
+    width: 85%;
     background-color: black;
     color: white;
     border: 0px;
@@ -44,7 +44,8 @@
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    padding-left: 15px;
+    padding-left: 25px;
+    padding-right: 5px;
 }
 
 .keep-me-log-in{
