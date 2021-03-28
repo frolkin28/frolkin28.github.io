@@ -187,29 +187,18 @@ footer {
     flex-direction: row;
 }
 
-.banner {
-    display: flex;
-    width: 57%;
-    padding: 26% 2% 2% 2%;
-    margin: 50px auto;
-    background: url('../img/main/banner.jpg');
-    background-color: cover;
-    overflow: hidden;
-    text-align: end;
-    font-family: sans-serif;
-    justify-content: flex-end;
-    font-size: 30px;
-    border-radius: 2%;
+#banner {
+    text-align: center;
 }
 
-.banner-button {
-    text-decoration: none;
-    border: 3px solid;
-    border-radius: 50%;
-    text-align: center;
-    padding: 30px;
-    color: white;
+#banner img {
+    max-width: 60%;
+    cursor: pointer;
+    border-radius: 3%;
 }
+
+
+/* Carousel */
 
 .main-new-colletion {
     padding: 10px 50px;
@@ -240,7 +229,6 @@ footer {
     text-align: center;
 }
 
-/* Carousel */
 
 .arrow {
     font-size: 35px;
