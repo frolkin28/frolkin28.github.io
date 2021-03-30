@@ -105,7 +105,7 @@ dfn:after{
 }
 
 #image {
-	padding-left: 4%;
+	padding-left: 1%;
 	padding-top: 10px;
 	width :95%;
 	height : auto;
@@ -115,13 +115,12 @@ dfn:after{
 	font-weight: 600;
 	font-size: 85%;
 	padding-left: 10%;
-	padding-top: 10px;
 	width :65%;
 }
  
 #text {
 	padding-left: 10%;
-	padding-top: 25px;
+	padding-top: 4px;
 	width :65%;
 }
 
