@@ -16,6 +16,7 @@
 
 <body>
     <div class="header">
+
         <div class="auth-block">
             <ul>
                 <li>
@@ -27,92 +28,110 @@
                 </li>
             </ul>
         </div>
-        <header class="nav-block">
-            <h1 class="title">Nike shop</h1>
-            <ul>
-                <li>
-                    <h5>Men</h5>
-                </li>
-                <li>
-                    <h5>Women</h5>
-                </li>
-                <li>
-                    <h5>Kids</h5>
-                </li>
-                <li>
-                    <h5>Unisex</h5>
-                </li>
-                <li>
-                    <h5>Collections</h5>
-                </li>
-            </ul>
-            <div class="cart">
-                <img alt="cart" src="./img/main/cart.png" height="30" width="30">
-            </div>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <h1 class="title">Nike shop</h1>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse nav-block" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="item">
+                            <h5>Men</h5>
+                        </li>
+                        <li class="item">
+                            <h5>Women</h5>
+                        </li>
+                        <li class="item">
+                            <h5>Kids</h5>
+                        </li>
+
+                        <li class="item">
+                            <h5>Unisex</h5>
+                        </li>
+
+                        <li class="item">
+                            <h5>Collections</h5>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="cart">
+                    <img alt="cart" src="./img/main/favorites.png" height="30" width="30">
+                    <img alt="cart" src="./img/main/cart.png" height="30" width="30">
+                </div>
+
+            </nav>
+
+
         </header>
         <div class="advert">
-            <h5>
-                <a href="#collection">New collection is alreaady on site</a>
-            </h5>
+            <h5>New collection is alreaady on site</h5>
         </div>
+    </div>
     </div>
 
 
-    <!-- Sign in popup -->
-    <div id="sign-in-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="auth-popup modal-content faded">
-                <p>Sign In</p>
-                <form class="auth-form">
-                    <input type="text" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <div class="sign-in-options">
-                        <div class="keep-me-log-in">
-                            <input type="checkbox" />
-                            <label>Keep me logged in</label>
+        <!-- Sign in popup -->
+        <div id="sign-in-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+    
+                <div class="auth-popup modal-content faded">
+                    <p>Sign In</p>
+                    <form class="auth-form">
+                        <input type="text" placeholder="Email" />
+                        <input type="password" placeholder="Password" />
+                        <div class="sign-in-options">
+                            <div class="keep-me-log-in">
+                                <input type="checkbox" />
+                                <label>Keep me logged in</label>
+                            </div>
+                            <div class="forget-password">
+                                <a href="#">Forgot password?</a>
+                            </div>
                         </div>
-                        <div class="forget-password">
-                            <a href="#">Forgot password?</a>
+                        <button>Sign In</button>
+                        <div class="dont-have-account">
+                            <p>Still don't have account?</p>
+                            <a href="#sign-up-modal" data-toggle="modal" data-dismiss="modal">Sign Up</a>
                         </div>
-                    </div>
-                    <button>Sign In</button>
-                    <div class="dont-have-account">
-                        <p>Still don't have account?</p>
-                        <a href="#sign-up-modal" data-toggle="modal" data-dismiss="modal">Sign Up</a>
-                    </div>
-                </form>
+                    </form>
+                </div>
+    
             </div>
-
         </div>
-    </div>
-    <!-- End of sing in popup -->
-
-
-    <!-- Sign up popup -->
-    <div id="sign-up-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-
-            <div class="auth-popup modal-content faded">
-                <p>Sign Up</p>
-                <form class="auth-form">
-                    <input type="text" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <input type="password" placeholder="Confirm password" />
-                    <input type="text" placeholder="First name" />
-                    <input type="text" placeholder="Last name" />
-                    <input type="date" placeholder="Date of birth" />
-                    <button>Sign Up</button>
-                    <div class="already-have-account">
-                        <p>Already have account?</p>
-                        <a href="#sign-in-modal" data-toggle="modal" data-dismiss="modal">Sign In</a>
-                    </div>
-                </form>
+        <!-- End of sing in popup -->
+    
+    
+        <!-- Sign up popup -->
+        <div id="sign-up-modal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+    
+                <div class="auth-popup modal-content faded">
+                    <p>Sign Up</p>
+                    <form class="auth-form">
+                        <input type="text" placeholder="Email" />
+                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Confirm password" />
+                        <input type="text" placeholder="First name" />
+                        <input type="text" placeholder="Last name" />
+                        <input type="date" placeholder="Date of birth" />
+                        <button>Sign Up</button>
+                        <div class="already-have-account">
+                            <p>Already have account?</p>
+                            <a href="#sign-in-modal" data-toggle="modal" data-dismiss="modal">Sign In</a>
+                        </div>
+                    </form>
+                </div>
+    
             </div>
-
         </div>
-    </div>
-    <!-- End of sing up popup -->
+        <!-- End of sing up popup -->
+
+    <!-- Checkout block -->
 
 
     <div id="banner">

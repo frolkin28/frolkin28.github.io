@@ -2,6 +2,7 @@ let slideIndex = 0;
 const itemsPerSlide = 3;
 const totalSlidesAmount = document.getElementsByClassName('new-collection-item').length;
 
+
 function moveLeft() {
     if (slideIndex > 0) {
         slideIndex -= 1;
@@ -25,6 +26,6 @@ function showSlides(n) {
             item.style.display = 'block';
         } else {
             item.style.display = 'none';
-        }   
+        }
     });
 }
