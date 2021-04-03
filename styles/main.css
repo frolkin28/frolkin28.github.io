@@ -51,7 +51,6 @@
     padding: 15px 10px 5px 10px;
     display: inline-block;
     margin: 2px 10px;
-    font-size: 20px;
     border-bottom: 2px solid;
     border-color: #f8f9fa;
     cursor: pointer;
@@ -93,6 +92,7 @@ footer {
     display: flex;
     flex-direction: column;
     font-family: 'Courier New';
+    width: 100%;
 }
 
 .footer-info {
@@ -127,17 +127,6 @@ footer {
 }
 
 /* font awesome icons */
-
-.fa {
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 10px;
-    font-size: 50px;
-    width: 32px;
-    border-radius: 50%;
-    border: 2px solid;
-}
 
 .fa:last-child {
     margin-right: 7%;
@@ -203,7 +192,6 @@ footer {
 /* Carousel */
 
 .main-new-colletion {
-    padding: 10px 50px;
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -213,7 +201,6 @@ footer {
     flex: 7;
     justify-content: center;
     margin: 0px 15px;
-    padding-left: 30px;
 }
 
 .new-collection-item-spec {
@@ -270,6 +257,17 @@ footer {
 
 
 @media screen and (min-width: 960px){
+    .fa {
+        padding: 10px 30px 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 5px;
+        font-size: 20px;
+        width: 32px;
+        border-radius: 50%;
+        border: 2px solid;
+    }
+
     #banner {
         text-align: center;
     }
@@ -315,5 +313,16 @@ footer {
     }
     #banner {
         text-align: center;
+    }
+
+    .fa {
+        padding: 10px 22px 10px 12px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 5px;
+        font-size: 14px;
+        width: 32px;
+        border-radius: 50%;
+        border: 2px solid;
     }
 }
