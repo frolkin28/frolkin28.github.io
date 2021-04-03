@@ -217,15 +217,6 @@ footer {
 }
 
 
-.arrow {
-    font-size: 35px;
-    flex: 1;
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
 .unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none; 
@@ -254,9 +245,18 @@ footer {
 }
 
 
-@media screen and (min-width: 960px){
+@media screen and (min-width: 1024px){
     .new-collection-item:nth-last-child(2n-1)  {
         display: none;
+    }
+
+    .arrow {
+        font-size: 35px;
+        flex: 1;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        cursor: pointer;
     }
 
     .fa {
@@ -281,7 +281,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
     .new-collection-item:nth-last-child(2n)  {
         display: none;
     }
@@ -299,6 +299,16 @@ footer {
     .title {
         flex: 3;
     }
+
+    .arrow {
+        font-size: 80px;
+        flex: 1;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
     .checkout {
         display: flex;
         justify-content: center;

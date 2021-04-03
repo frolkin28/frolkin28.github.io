@@ -3,7 +3,7 @@ const totalSlidesAmount = document.getElementsByClassName('new-collection-item')
 
 
 function getItemsPerSlide() {
-    return window.innerWidth > 960 ? 3 : 2;
+    return window.innerWidth > 1024 ? 3 : 2;
 }
 
 function moveLeft() {
