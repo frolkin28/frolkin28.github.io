@@ -198,8 +198,7 @@ footer {
 
 .new-collection-item {
     flex: 7;
-    justify-content: center;
-    margin: 0px 15px;
+    text-align: center;
 }
 
 .new-collection-item-spec {
@@ -208,12 +207,12 @@ footer {
 }
 
 .new-collection-item-title {
-    flex: 1;
+    flex: 3;
     text-align: center;
 }
 
 .new-collection-item-price {
-    flex: 1;
+    flex: 2;
     text-align: center;
 }
 
@@ -256,6 +255,10 @@ footer {
 
 
 @media screen and (min-width: 960px){
+    .new-collection-item:nth-last-child(2n-1)  {
+        display: none;
+    }
+
     .fa {
         padding: 10px 30px 10px 10px;
         text-align: center;
@@ -279,6 +282,10 @@ footer {
 }
 
 @media screen and (max-width: 960px) {
+    .new-collection-item:nth-last-child(2n)  {
+        display: none;
+    }
+
     html {
         font-size: 14px;
     }
