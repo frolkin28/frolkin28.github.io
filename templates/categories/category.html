@@ -71,6 +71,66 @@
 		</div>
 	</div>
 	</div>
+
+
+	<!-- Sign in popup -->
+	<div id="sign-in-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-dialog-centered">
+
+			<div class="auth-popup modal-content faded">
+				<p>Sign In</p>
+				<form class="auth-form">
+					<input type="text" placeholder="Email" />
+					<input type="password" placeholder="Password" />
+					<div class="sign-in-options">
+						<div class="keep-me-log-in">
+							<input type="checkbox" />
+							<label>Keep me logged in</label>
+						</div>
+						<div class="forget-password">
+							<a href="#">Forgot password?</a>
+						</div>
+					</div>
+					<button>Sign In</button>
+					<div class="dont-have-account">
+						<p>Still don't have account?</p>
+						<a href="#sign-up-modal" data-toggle="modal" data-dismiss="modal">Sign Up</a>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+	<!-- End of sing in popup -->
+
+
+
+	<!-- Sign up popup -->
+	<div id="sign-up-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-dialog-centered">
+
+			<div class="auth-popup modal-content faded">
+				<p>Sign Up</p>
+				<form class="auth-form">
+					<input type="text" placeholder="Email" />
+					<input type="password" placeholder="Password" />
+					<input type="password" placeholder="Confirm password" />
+					<input type="text" placeholder="First name" />
+					<input type="text" placeholder="Last name" />
+					<input type="date" placeholder="Date of birth" />
+					<button>Sign Up</button>
+					<div class="already-have-account">
+						<p>Already have account?</p>
+						<a href="#sign-in-modal" data-toggle="modal" data-dismiss="modal">Sign In</a>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+	<!-- End of sing up popup -->
+
+
 	<div class="container">
 		<div class="item-block">
 			<img src="../../img/goods/3.jpeg" alt="">
