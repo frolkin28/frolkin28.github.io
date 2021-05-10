@@ -132,6 +132,10 @@ dfn:after{
 	font-size: 20px;
 }
 
+#more {
+	display: none;
+}
+
 @media screen and (max-width: 768px) {
 	.flex-container {
 		padding-left: 10%;
@@ -147,4 +151,13 @@ dfn:after{
 		font-size: 65%;
 		margin-left: 0%;
 	}
+}
+
+a.morelink {
+	text-decoration:none;
+	outline: none;
+}
+
+.morecontent span {
+	display: none;
 }

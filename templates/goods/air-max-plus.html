@@ -214,27 +214,29 @@
             </div>
 
             <div>
-                <p id="text">
+                <p id="text" class="comment more">
                     In the ‘70s, Nike was the new shoe on the block.<br>
                     So new in fact, we were still breaking into the basketball scene and testing prototypes on the feet
                     of our local team.<br>
                     Of course, the design improved over the years, but the name stuck.<br>
-                    The Nike Blazer Mid ’77 Vintage—classic since the beginning. </p>
-            </div>
+                    The Nike Blazer Mid ’77 Vintage—classic since the beginning.<br> </p>
+					
+				<div>
+					<button class="button_cart" onclick="handleAddToCart()">Add to Bag</button>
+				</div>
 
-            <div>
-                <button class="button_cart" onclick="handleAddToCart()">Add to Bag</button>
-            </div>
+				<div>
+					<button class="button_fav"> <dfn>Favorite </dfn> </button>
+				</div>
 
-            <div>
-                <button class="button_fav"> <dfn>Favorite </dfn> </button>
-            </div>
+				<div>
+					<button class="button_rev">Reviews</button>
+					
+				</div>
 
-            <div><button class="button_rev">Reviews</button></div>
+			</div>
 
-        </div>
-
-    </div>
+		</div>
     </div>
 
 
@@ -266,6 +268,7 @@
 
     <script src="../../scripts/script.js"></script>
     <script src="../../scripts/storage.js"></script>
+	<script src="../../scripts/goods.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -275,7 +278,46 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+		
+	<script>
+	
+		$(document).ready(function() {
+		var showChar = 200;
+		var ellipsestext = "...";
+		var moretext = "Read more";
+		var lesstext = "Hide";
+		$('.more').each(function() {
+			var content = $(this).html();
 
+			if(content.length > showChar) {
+
+				var c = content.substr(0, showChar);
+				var h = content.substr(showChar-1, content.length - showChar);
+
+				var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h
+				+ '</span>&nbsp;&nbsp;<a href="" class="morelink" style="font-size:15px">' + moretext + '</a></span>';
+
+				$(this).html(html);
+			}
+
+		});
+
+		$(".morelink").click(function(){
+			if($(this).hasClass("less")) {
+				$(this).removeClass("less");
+				$(this).html(moretext);
+			} else {
+				$(this).addClass("less");
+				$(this).html(lesstext);
+			}
+			$(this).parent().prev().toggle();
+			$(this).prev().toggle();
+			return false;
+		});
+	});
+	
+	</script>
+	
 </body>
 
 </html>
