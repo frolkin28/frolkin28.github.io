@@ -111,27 +111,33 @@
     
         <!-- Sign up popup -->
         <div id="sign-up-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-    
-                <div class="auth-popup modal-content faded">
-                    <p>Sign Up</p>
-                    <form class="auth-form">
-                        <input type="text" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
-                        <input type="password" placeholder="Confirm password" />
-                        <input type="text" placeholder="First name" />
-                        <input type="text" placeholder="Last name" />
-                        <input type="date" placeholder="Date of birth" />
-                        <button>Sign Up</button>
-                        <div class="already-have-account">
-                            <p>Already have account?</p>
-                            <a href="#sign-in-modal" data-toggle="modal" data-dismiss="modal">Sign In</a>
-                        </div>
-                    </form>
-                </div>
-    
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="auth-popup modal-content faded">
+                <p>Sign Up</p>
+                <form class="auth-form" novalidate>
+					<input type="email" placeholder="Email" id="mail"  />
+					<span class="error" aria-live="polite" id = "error_email"> </span>
+                    <input type="password" placeholder="Password" id="password" pattern=".{8,}" />
+					<span class="error" aria-live="polite" id = "error_pass" > </span>
+                    <input type="password" placeholder="Confirm password" id="confirm_password"  />
+					<span class="error" aria-live="polite" id = "error_confirm_pass" > </span>
+                    <input type="text" placeholder="First name" id="first_name" pattern="[A-Za-z' -]+"  />
+					<span class="error" aria-live="polite" id = "error_first_name" > </span>
+                    <input type="text" placeholder="Last name" id="last_name" pattern="[A-Za-z' -]+"  />
+					<span class="error" aria-live="polite" id = "error_last_name" > </span>
+                    <input type="date" placeholder="Date of birth" id="date"  />
+					<span class="error" aria-live="polite" id = "error_date" > </span>
+                    <button>Sign Up</button>
+                    <div class="already-have-account">
+                        <p>Already have account?</p>
+                        <a href="#sign-in-modal" data-toggle="modal" data-dismiss="modal">Sign In</a>
+                    </div>
+                </form>
             </div>
+
         </div>
+    </div>
         <!-- End of sing up popup -->
 
     <!-- Checkout block -->
@@ -277,6 +283,7 @@
 
     </footer>
 
+	<script src="../scripts/auth.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

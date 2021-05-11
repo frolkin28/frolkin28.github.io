@@ -15,7 +15,7 @@ let error_date = document.getElementById('error_date');
 
 
 email.addEventListener("input", function (event) {
-  if (email.validity.valid) {
+  if ((email.value !='') && (email.validity.valid)) {
     error_email.innerHTML = ""; 
     error_email.className = "error"; 
   }
@@ -23,7 +23,7 @@ email.addEventListener("input", function (event) {
 
 
 pass.addEventListener("input", function (event) {
-  if (pass.validity.valid) {
+  if ((pass.value !='') && (pass.validity.valid) ){
     error_pass.innerHTML = ""; 
     error_pass.className = "error"; 
   }
@@ -39,7 +39,7 @@ confirm_pass.addEventListener("input", function (event) {
 
 
 first_name.addEventListener("input", function (event) {
-  if (first_name.validity.valid) {
+  if ((first_name.value !='') && (first_name.validity.valid))  {
     error_first_name.innerHTML = ""; 
     error_first_name.className = "error"; 
   }
@@ -47,7 +47,7 @@ first_name.addEventListener("input", function (event) {
 
 
 last_name.addEventListener("input", function (event) {
-  if (last_name.validity.valid) {
+  if ((last_name.value !='') && (last_name.validity.valid)) {
     error_last_name.innerHTML = ""; 
     error_last_name.className = "error"; 
   }
@@ -55,7 +55,7 @@ last_name.addEventListener("input", function (event) {
 
 
 date.addEventListener("input", function (event) {
-  if (date.validity.valid) {
+  if ((date.value !='') && (date.validity.valid)) {
     error_date.innerHTML = ""; 
     error_date.className = "error"; 
   }
@@ -64,13 +64,13 @@ date.addEventListener("input", function (event) {
 
 
 form.addEventListener("submit", function (event) {
-  if (!email.validity.valid) {
+  if ((!email.validity.valid) ||(email.value == '') ) {
     error_email.innerHTML = "Please enter a valid email address.";
     error_email.className = "error active";
     event.preventDefault();
   }
   
-  if (!pass.validity.valid) {
+  if ((!pass.validity.valid) ||(pass.value == '') ){
     error_pass.innerHTML = "Password does not meet minimal requirements(8).";
     error_pass.className = "error active";
     event.preventDefault();
@@ -82,19 +82,19 @@ form.addEventListener("submit", function (event) {
     event.preventDefault();
   }
   
-  if (!first_name.validity.valid) {
+  if ((!first_name.validity.valid) ||(first_name.value == '') ) {
     error_first_name.innerHTML = "Please enter a valid first name.";
     error_first_name.className = "error active";
     event.preventDefault();
   }
   
-  if (!last_name.validity.valid) {
+  if ((!last_name.validity.valid) ||(last_name.value == '') ){
     error_last_name.innerHTML = "Please enter a valid last name.";
     error_last_name.className = "error active";
     event.preventDefault();
   }
   
-  if (!date.validity.valid) {
+  if ((!date.validity.valid) ||(date.value == '')) {
     error_date.innerHTML = "Please enter a valid date of birth.";
     error_date.className = "error active";
     event.preventDefault();
