@@ -1,21 +1,27 @@
 class Storage {
-    key = 'products';
+    cartKey = 'cart';
+    favoritesKey = 'favorites'
 
     constructor() {
-        this.savedProducts = this.loadFromLocalStorage();
+        this.cartProducts = this.loadFromLocalStorage(this.cartKey);
+        this.favoritesProducts = this.loadFromLocalStorage(this.favoritesKey);
     }
 
-    loadFromLocalStorage() {
-        return JSON.parse(localStorage.getItem(this.key)) || {};
+    loadFromLocalStorage(key) {
+        return JSON.parse(localStorage.getItem(key)) || {};
     }
 
-    writeToLocalStorage(data) {
-        localStorage.setItem(this.key, JSON.stringify(data));
+    writeToLocalStorage(key, data) {
+        localStorage.setItem(key, JSON.stringify(data));
     }
 
-    add(element) {
-        this.savedProducts[element.id] = element;
-        this.writeToLocalStorage(this.savedProducts);
+    addToCart(element) {
+        this.cartProducts[element.id] = element;
+        this.writeToLocalStorage(this.cartKey, this.cartProducts);
+    }
+    addToFavorites(element) {
+        this.favoritesProducts[element.id] = element;
+        this.writeToLocalStorage(this.favoritesKey, this.favoritesProducts);
     }
 }
 
@@ -46,7 +52,7 @@ function handleAddToCart() {
             price
         }
         const storage = new Storage();
-        storage.add(product);
+        storage.addToCart(product);
     }
 }
 

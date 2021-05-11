@@ -105,25 +105,25 @@
 
 
 
-	<!-- Sign up popup -->
-	<div id="sign-up-modal" class="modal fade" role="dialog">
+    <!-- Sign up popup -->
+    <div id="sign-up-modal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
 
             <div class="auth-popup modal-content faded">
                 <p>Sign Up</p>
                 <form class="auth-form" novalidate>
-					<input type="email" placeholder="Email" id="mail"  />
-					<span class="error" aria-live="polite" id = "error_email"> </span>
-                    <input type="password" placeholder="Password" id="password" pattern=".{8,}" />
-					<span class="error" aria-live="polite" id = "error_pass" > </span>
-                    <input type="password" placeholder="Confirm password" id="confirm_password"  />
-					<span class="error" aria-live="polite" id = "error_confirm_pass" > </span>
-                    <input type="text" placeholder="First name" id="first_name" pattern="[A-Za-z' -]+"  />
-					<span class="error" aria-live="polite" id = "error_first_name" > </span>
-                    <input type="text" placeholder="Last name" id="last_name" pattern="[A-Za-z' -]+"  />
-					<span class="error" aria-live="polite" id = "error_last_name" > </span>
-                    <input type="date" placeholder="Date of birth" id="date"  />
-					<span class="error" aria-live="polite" id = "error_date" > </span>
+                    <input type="email" placeholder="Email" id="mail" required />
+                    <span class="inactive" aria-live="polite" id="error_email">Please enter a valid email address.</span>
+                    <input type="password" placeholder="Password" id="password" required pattern=".{8,}" />
+                    <span class="inactive" aria-live="polite" id="error_pass">Password does not meet minimal requirements(8).</span>
+                    <input type="password" placeholder="Confirm password" id="confirm_password" required />
+                    <span class="inactive" aria-live="polite" id="error_confirm_pass">Passwords don't match</span>
+                    <input type="text" placeholder="First name" id="first_name" pattern="[A-Za-z' -]+" required />
+                    <span class="inactive" aria-live="polite" id="error_first_name">Please enter a valid first name.</span>
+                    <input type="text" placeholder="Last name" id="last_name" pattern="[A-Za-z' -]+" required />
+                    <span class="inactive" aria-live="polite" id="error_last_name">Please enter a valid last name.</span>
+                    <input type="date" placeholder="Date of birth" id="date" required />
+                    <span class="inactive" aria-live="polite" id="error_date">Please enter a valid date of birth.</span>
                     <button>Sign Up</button>
                     <div class="already-have-account">
                         <p>Already have account?</p>
@@ -134,7 +134,7 @@
 
         </div>
     </div>
-	<!-- End of sing up popup -->
+    <!-- End of sing up popup -->
 
 
 	<div class="container">

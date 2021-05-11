@@ -115,18 +115,18 @@
             <div class="auth-popup modal-content faded">
                 <p>Sign Up</p>
                 <form class="auth-form" novalidate>
-					<input type="email" placeholder="Email" id="mail"  />
-					<span class="error" aria-live="polite" id = "error_email"> </span>
-                    <input type="password" placeholder="Password" id="password" pattern=".{8,}" />
-					<span class="error" aria-live="polite" id = "error_pass" > </span>
-                    <input type="password" placeholder="Confirm password" id="confirm_password"  />
-					<span class="error" aria-live="polite" id = "error_confirm_pass" > </span>
-                    <input type="text" placeholder="First name" id="first_name" pattern="[A-Za-z' -]+"  />
-					<span class="error" aria-live="polite" id = "error_first_name" > </span>
-                    <input type="text" placeholder="Last name" id="last_name" pattern="[A-Za-z' -]+"  />
-					<span class="error" aria-live="polite" id = "error_last_name" > </span>
-                    <input type="date" placeholder="Date of birth" id="date"  />
-					<span class="error" aria-live="polite" id = "error_date" > </span>
+                    <input type="email" placeholder="Email" id="mail" required />
+                    <span class="inactive" aria-live="polite" id="error_email">Please enter a valid email address.</span>
+                    <input type="password" placeholder="Password" id="password" required pattern=".{8,}" />
+                    <span class="inactive" aria-live="polite" id="error_pass">Password does not meet minimal requirements(8).</span>
+                    <input type="password" placeholder="Confirm password" id="confirm_password" required />
+                    <span class="inactive" aria-live="polite" id="error_confirm_pass">Passwords don't match</span>
+                    <input type="text" placeholder="First name" id="first_name" pattern="[A-Za-z' -]+" required />
+                    <span class="inactive" aria-live="polite" id="error_first_name">Please enter a valid first name.</span>
+                    <input type="text" placeholder="Last name" id="last_name" pattern="[A-Za-z' -]+" required />
+                    <span class="inactive" aria-live="polite" id="error_last_name">Please enter a valid last name.</span>
+                    <input type="date" placeholder="Date of birth" id="date" required />
+                    <span class="inactive" aria-live="polite" id="error_date">Please enter a valid date of birth.</span>
                     <button>Sign Up</button>
                     <div class="already-have-account">
                         <p>Already have account?</p>
@@ -226,23 +226,23 @@
                     of our local team.<br>
                     Of course, the design improved over the years, but the name stuck.<br>
                     The Nike Blazer Mid ’77 Vintage—classic since the beginning.<br> </p>
-					
-				<div>
-					<button class="button_cart" onclick="handleAddToCart()">Add to Bag</button>
-				</div>
 
-				<div>
-					<button class="button_fav"> <dfn>Favorite </dfn> </button>
-				</div>
+                <div>
+                    <button class="button_cart" onclick="handleAddToCart()">Add to Bag</button>
+                </div>
 
-				<div>
-					<button class="button_rev">Reviews</button>
-					
-				</div>
+                <div>
+                    <button class="button_fav"> <dfn>Favorite </dfn> </button>
+                </div>
 
-			</div>
+                <div>
+                    <button class="button_rev">Reviews</button>
 
-		</div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 
 
@@ -273,7 +273,7 @@
     </footer>
 
     <script src="../../scripts/storage.js"></script>
-	<script src="../../scripts/auth.js"></script>
+    <script src="../../scripts/auth.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -283,44 +283,44 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-		
-	<script>
-		$(document).ready(function() {
-		var showChar = 200;
-		var ellipsestext = "...";
-		var moretext = "Read more";
-		var lesstext = "Hide";
-		$('.more').each(function() {
-			var content = $(this).html();
 
-			if(content.length > showChar) {
+    <script>
+        $(document).ready(function () {
+            var showChar = 200;
+            var ellipsestext = "...";
+            var moretext = "Read more";
+            var lesstext = "Hide";
+            $('.more').each(function () {
+                var content = $(this).html();
 
-				var c = content.substr(0, showChar);
-				var h = content.substr(showChar-1, content.length - showChar);
+                if (content.length > showChar) {
 
-				var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h
-				+ '</span>&nbsp;&nbsp;<a href="" class="morelink" style="font-size:15px">' + moretext + '</a></span>';
+                    var c = content.substr(0, showChar);
+                    var h = content.substr(showChar - 1, content.length - showChar);
 
-				$(this).html(html);
-			}
+                    var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h
+                        + '</span>&nbsp;&nbsp;<a href="" class="morelink" style="font-size:15px">' + moretext + '</a></span>';
 
-		});
+                    $(this).html(html);
+                }
 
-		$(".morelink").click(function(){
-			if($(this).hasClass("less")) {
-				$(this).removeClass("less");
-				$(this).html(moretext);
-			} else {
-				$(this).addClass("less");
-				$(this).html(lesstext);
-			}
-			$(this).parent().prev().toggle();
-			$(this).prev().toggle();
-			return false;
-		});
-	});
-	</script>
-	
+            });
+
+            $(".morelink").click(function () {
+                if ($(this).hasClass("less")) {
+                    $(this).removeClass("less");
+                    $(this).html(moretext);
+                } else {
+                    $(this).addClass("less");
+                    $(this).html(lesstext);
+                }
+                $(this).parent().prev().toggle();
+                $(this).prev().toggle();
+                return false;
+            });
+        });
+    </script>
+
 </body>
 
 </html>

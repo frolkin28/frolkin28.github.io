@@ -1,4 +1,4 @@
-const form  = document.getElementsByTagName('form')[1];
+const form = document.getElementsByTagName('form')[1];
 const email = document.getElementById('mail');
 const pass = document.getElementById('password');
 const confirm_pass = document.getElementById('confirm_password');
@@ -6,98 +6,69 @@ const first_name = document.getElementById('first_name');
 const last_name = document.getElementById('last_name');
 const date = document.getElementById('date');
 
-let error_email = document.getElementById('error_email');
-let error_pass = document.getElementById('error_pass');
-let error_confirm_pass = document.getElementById('error_confirm_pass');
-let error_first_name = document.getElementById('error_first_name');
-let error_last_name = document.getElementById('error_last_name');
-let error_date = document.getElementById('error_date');
+const error_email = document.getElementById('error_email');
+const error_pass = document.getElementById('error_pass');
+const error_confirm_pass = document.getElementById('error_confirm_pass');
+const error_first_name = document.getElementById('error_first_name');
+const error_last_name = document.getElementById('error_last_name');
+const error_date = document.getElementById('error_date');
 
 
-email.addEventListener("input", function (event) {
-  if ((email.value !='') && (email.validity.valid)) {
-    error_email.innerHTML = ""; 
-    error_email.className = "error"; 
+form.addEventListener("submit", handleSignUpEvent, false);
+
+function handleSignUpEvent(event) {
+  event.preventDefault();
+  let formValid = true;
+  if (email.validity.valid) {
+    error_email.className = "inactive";
   }
-}, false);
-
-
-pass.addEventListener("input", function (event) {
-  if ((pass.value !='') && (pass.validity.valid) ){
-    error_pass.innerHTML = ""; 
-    error_pass.className = "error"; 
+  else {
+    formValid = false;
+    error_email.className = "error";
   }
-}, false);
 
-
-confirm_pass.addEventListener("input", function (event) {
-  if (confirm_pass.value === pass.value) {
-    error_confirm_pass.innerHTML = ""; 
-    error_confirm_pass.className = "error"; 
+  if (pass.validity.valid) {
+    error_pass.className = "inactive";
   }
-}, false);
-
-
-first_name.addEventListener("input", function (event) {
-  if ((first_name.value !='') && (first_name.validity.valid))  {
-    error_first_name.innerHTML = ""; 
-    error_first_name.className = "error"; 
+  else {
+    formValid = false;
+    error_pass.className = "error";
   }
-}, false);
 
+  if ((!confirm_pass.value) || (confirm_pass.value !== pass.value)) {
+    error_confirm_pass.className = "error";
+    formValid = false;
+  }
+  else {
+    error_confirm_pass.className = "inactive";
+  }
 
-last_name.addEventListener("input", function (event) {
-  if ((last_name.value !='') && (last_name.validity.valid)) {
-    error_last_name.innerHTML = ""; 
-    error_last_name.className = "error"; 
+  if (first_name.validity.valid) {
+    error_first_name.className = "inactive";
   }
-}, false);
+  else {
+    error_first_name.className = "error";
+    formValid = false;
+  }
 
+  if (last_name.validity.valid) {
+    error_last_name.className = "inactive";
+  }
+  else {
+    error_last_name.className = "error";
+    formValid = false;
+  }
 
-date.addEventListener("input", function (event) {
-  if ((date.value !='') && (date.validity.valid)) {
-    error_date.innerHTML = ""; 
-    error_date.className = "error"; 
+  if (date.validity.valid) {
+    error_date.className = "inactive";
   }
-}, false);
+  else {
+    error_date.className = "error";
+    formValid = false;
+  }
 
+  if (formValid) {
+    form.submit();
+  }
 
-
-form.addEventListener("submit", function (event) {
-  if ((!email.validity.valid) ||(email.value == '') ) {
-    error_email.innerHTML = "Please enter a valid email address.";
-    error_email.className = "error active";
-    event.preventDefault();
-  }
-  
-  if ((!pass.validity.valid) ||(pass.value == '') ){
-    error_pass.innerHTML = "Password does not meet minimal requirements(8).";
-    error_pass.className = "error active";
-    event.preventDefault();
-  }
-  
-  if (confirm_pass.value !== pass.value) {
-    error_confirm_pass.innerHTML = "Passwords don't match";
-    error_confirm_pass.className = "error active";
-    event.preventDefault();
-  }
-  
-  if ((!first_name.validity.valid) ||(first_name.value == '') ) {
-    error_first_name.innerHTML = "Please enter a valid first name.";
-    error_first_name.className = "error active";
-    event.preventDefault();
-  }
-  
-  if ((!last_name.validity.valid) ||(last_name.value == '') ){
-    error_last_name.innerHTML = "Please enter a valid last name.";
-    error_last_name.className = "error active";
-    event.preventDefault();
-  }
-  
-  if ((!date.validity.valid) ||(date.value == '')) {
-    error_date.innerHTML = "Please enter a valid date of birth.";
-    error_date.className = "error active";
-    event.preventDefault();
-  }
-  
-}, false);
+}
