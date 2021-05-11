@@ -81,9 +81,11 @@
 
             <div class="auth-popup modal-content faded">
                 <p>Sign In</p>
-                <form class="auth-form">
-                    <input type="text" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
+                <form class="auth-form" novalidate>
+                    <input type="email" placeholder="Email" id="signin-mail" required />
+                    <span class="inactive" aria-live="polite" id="error-signin-email">Please enter a valid emailaddress.</span>
+                    <input type="password" placeholder="Password" id="signin-pass" required />
+                    <span class="inactive" aria-live="polite" id="error-signin-pass">Please enter a valid password.</span>
                     <div class="sign-in-options">
                         <div class="keep-me-log-in">
                             <input type="checkbox" />

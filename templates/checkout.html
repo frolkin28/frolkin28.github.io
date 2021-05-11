@@ -78,37 +78,41 @@
     </div>
 
 
-        <!-- Sign in popup -->
-        <div id="sign-in-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-dialog-centered">
-    
-                <div class="auth-popup modal-content faded">
-                    <p>Sign In</p>
-                    <form class="auth-form">
-                        <input type="text" placeholder="Email" />
-                        <input type="password" placeholder="Password" />
-                        <div class="sign-in-options">
-                            <div class="keep-me-log-in">
-                                <input type="checkbox" />
-                                <label>Keep me logged in</label>
-                            </div>
-                            <div class="forget-password">
-                                <a href="#">Forgot password?</a>
-                            </div>
+    <!-- Sign in popup -->
+    <div id="sign-in-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="auth-popup modal-content faded">
+                <p>Sign In</p>
+                <form class="auth-form" novalidate>
+                    <input type="email" placeholder="Email" id="signin-mail" required />
+                    <span class="inactive" aria-live="polite" id="error-signin-email">Please enter a valid
+                        emailaddress.</span>
+                    <input type="password" placeholder="Password" id="signin-pass" required />
+                    <span class="inactive" aria-live="polite" id="error-signin-pass">Please enter a valid
+                        password.</span>
+                    <div class="sign-in-options">
+                        <div class="keep-me-log-in">
+                            <input type="checkbox" />
+                            <label>Keep me logged in</label>
                         </div>
-                        <button>Sign In</button>
-                        <div class="dont-have-account">
-                            <p>Still don't have account?</p>
-                            <a href="#sign-up-modal" data-toggle="modal" data-dismiss="modal">Sign Up</a>
+                        <div class="forget-password">
+                            <a href="#">Forgot password?</a>
                         </div>
-                    </form>
-                </div>
-    
+                    </div>
+                    <button>Sign In</button>
+                    <div class="dont-have-account">
+                        <p>Still don't have account?</p>
+                        <a href="#sign-up-modal" data-toggle="modal" data-dismiss="modal">Sign Up</a>
+                    </div>
+                </form>
             </div>
+
         </div>
-        <!-- End of sing in popup -->
-    
-    
+    </div>
+    <!-- End of sing in popup -->
+
+
     <!-- Sign up popup -->
     <div id="sign-up-modal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
@@ -117,15 +121,19 @@
                 <p>Sign Up</p>
                 <form class="auth-form" novalidate>
                     <input type="email" placeholder="Email" id="mail" required />
-                    <span class="inactive" aria-live="polite" id="error_email">Please enter a valid email address.</span>
+                    <span class="inactive" aria-live="polite" id="error_email">Please enter a valid email
+                        address.</span>
                     <input type="password" placeholder="Password" id="password" required pattern=".{8,}" />
-                    <span class="inactive" aria-live="polite" id="error_pass">Password does not meet minimal requirements(8).</span>
+                    <span class="inactive" aria-live="polite" id="error_pass">Password does not meet minimal
+                        requirements(8).</span>
                     <input type="password" placeholder="Confirm password" id="confirm_password" required />
                     <span class="inactive" aria-live="polite" id="error_confirm_pass">Passwords don't match</span>
                     <input type="text" placeholder="First name" id="first_name" pattern="[A-Za-z' -]+" required />
-                    <span class="inactive" aria-live="polite" id="error_first_name">Please enter a valid first name.</span>
+                    <span class="inactive" aria-live="polite" id="error_first_name">Please enter a valid first
+                        name.</span>
                     <input type="text" placeholder="Last name" id="last_name" pattern="[A-Za-z' -]+" required />
-                    <span class="inactive" aria-live="polite" id="error_last_name">Please enter a valid last name.</span>
+                    <span class="inactive" aria-live="polite" id="error_last_name">Please enter a valid last
+                        name.</span>
                     <input type="date" placeholder="Date of birth" id="date" required />
                     <span class="inactive" aria-live="polite" id="error_date">Please enter a valid date of birth.</span>
                     <button>Sign Up</button>
@@ -283,7 +291,7 @@
 
     </footer>
 
-	<script src="../scripts/auth.js"></script>
+    <script src="../scripts/auth.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

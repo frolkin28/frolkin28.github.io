@@ -1,10 +1,14 @@
-const form = document.getElementsByTagName('form')[1];
+const signUpForm = document.getElementsByTagName('form')[1];
+const signInForm = document.getElementsByTagName('form')[0];
 const email = document.getElementById('mail');
 const pass = document.getElementById('password');
 const confirm_pass = document.getElementById('confirm_password');
 const first_name = document.getElementById('first_name');
 const last_name = document.getElementById('last_name');
 const date = document.getElementById('date');
+
+const signInEmail = document.getElementById('signin-mail');
+const signInPass = document.getElementById('signin-pass');
 
 const error_email = document.getElementById('error_email');
 const error_pass = document.getElementById('error_pass');
@@ -13,8 +17,14 @@ const error_first_name = document.getElementById('error_first_name');
 const error_last_name = document.getElementById('error_last_name');
 const error_date = document.getElementById('error_date');
 
+const errorSignInEmail = document.getElementById('error-signin-email');
+const errorSignInPass = document.getElementById('error-signin-pass');
 
-form.addEventListener("submit", handleSignUpEvent, false);
+
+signUpForm.addEventListener("submit", handleSignUpEvent, false);
+signInForm.addEventListener("submit", handleSignInEvent, false);
+console.log(signInForm);
+
 
 function handleSignUpEvent(event) {
   event.preventDefault();
@@ -68,7 +78,33 @@ function handleSignUpEvent(event) {
   }
 
   if (formValid) {
-    form.submit();
+    signUpForm.submit();
   }
 
+}
+
+function handleSignInEvent(event) {
+  console.log('validate');
+  event.preventDefault();
+  let formValid = true;
+
+  if (signInEmail.validity.valid) {
+    errorSignInEmail.className = "inactive";
+  }
+  else {
+    formValid = false;
+    errorSignInEmail.className = "error";
+  }
+
+  if (signInPass.validity.valid) {
+    errorSignInPass.className = "inactive";
+  }
+  else {
+    formValid = false;
+    errorSignInPass.className = "error";
+  }
+
+  if (formValid) {
+    signInForm.submit();
+  }
 }
