@@ -89,7 +89,7 @@ form.addEventListener("submit", function (event) {
   }
   
   if (!last_name.validity.valid) {
-    error_last_name.innerHTML = "Please enter a valid first name.";
+    error_last_name.innerHTML = "Please enter a valid last name.";
     error_last_name.className = "error active";
     event.preventDefault();
   }
