@@ -27,6 +27,40 @@ class Storage {
 
 
 function handleAddToCart() {
+    const product = parseProduct();
+    if (product) {
+        const storage = new Storage();
+        storage.addToCart(product);
+    }
+}
+
+function handleAddToFavorites() {
+    const product = parseProduct();
+    if (product) {
+        const storage = new Storage();
+        storage.addToFavorites(product);
+    }
+}
+
+
+function parseProductId(RawId) {
+    const pattern = /Code:\s+(\d+)/;
+    if (RawId.match(pattern)) {
+        return Number(RawId.match(pattern)[1]);
+    }
+    return null;
+}
+
+function parsePrice(RawPrice) {
+    try {
+        return Number(RawPrice.trim().replace('$', ''));
+    }
+    catch (NumberFormatException) {
+        return null;
+    }
+}
+
+function parseProduct() {
     const productIdElement = document.getElementById('productId');
     const imgElement = document.getElementById('image');
     const nameElement = document.getElementById('name');
@@ -45,31 +79,14 @@ function handleAddToCart() {
         price = parsePrice(priceElement.textContent);
     }
     if (image && name && price && id) {
-        const product = {
+        return {
             id,
             image,
             name,
             price
-        }
-        const storage = new Storage();
-        storage.addToCart(product);
-    }
-}
+        };
 
-
-function parseProductId(RawId) {
-    const pattern = /Code:\s+(\d+)/;
-    if (RawId.match(pattern)) {
-        return Number(RawId.match(pattern)[1]);
-    }
-    return null;
-}
-
-function parsePrice(RawPrice) {
-    try {
-        return Number(RawPrice.trim().replace('$', ''));
-    }
-    catch (NumberFormatException) {
+    } else {
         return null;
     }
 }
