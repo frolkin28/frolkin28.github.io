@@ -27,6 +27,10 @@ class Storage {
 
 
 function handleAddToCart() {
+	var change = document.getElementsByClassName("button_cart")[0];
+    if (change.innerHTML=="Add to Bag") change.innerHTML = "Remove from Bag";
+    else change.innerHTML = "Add to Bag";
+		
     const product = parseProduct();
     if (product) {
         const storage = new Storage();
@@ -35,6 +39,10 @@ function handleAddToCart() {
 }
 
 function handleAddToFavorites() {
+	var change = document.getElementsByClassName("button_fav")[0];
+    if (change.innerHTML=="Favorite ♥") change.innerHTML = "Remove from favorite";
+    else change.innerHTML = "Favorite ♥";
+	
     const product = parseProduct();
     if (product) {
         const storage = new Storage();

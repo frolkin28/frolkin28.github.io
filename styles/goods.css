@@ -33,10 +33,6 @@ P[price]{
 	margin-left: 300%;
 }
 
-dfn:after{
-  content: "♥" ;
-}
-
 .flex-container {
 	flex-direction: row;
 	padding-left: 60px;
