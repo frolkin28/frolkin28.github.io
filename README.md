@@ -3,5 +3,3 @@
 [Main page](https://frolkin28.github.io/web_project/)
 
 [Product page](https://frolkin28.github.io/web_project/templates/goods/air-max-plus.html)
-
-[Category page](https://frolkin28.github.io/web_project/templates/categories/category.html)

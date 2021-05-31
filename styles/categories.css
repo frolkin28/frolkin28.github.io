@@ -16,9 +16,6 @@
 .title-name {
 	color: black;
 }
-.desc {
-	color: #C9CAC5;
-}
 
 .item-block p {
 	margin-bottom: 5px;
@@ -28,3 +25,15 @@
 	flex-direction: row;
 	justify-content: space-around;
 }
+
+#category {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 2%;
+	font-size: 30px;
+}
+
+a { 
+    text-decoration: none;
+   }
