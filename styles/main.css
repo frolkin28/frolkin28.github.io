@@ -346,3 +346,13 @@ footer {
         border: 2px solid;
     }
 }
+
+a{ 
+    text-decoration:  none ;
+	color: black ;
+}
+ 
+a:hover { 
+    text-decoration: none;
+    color: black;
+   }
