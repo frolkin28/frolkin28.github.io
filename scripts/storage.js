@@ -40,8 +40,8 @@ function handleAddToCart() {
 
 function handleAddToFavorites() {
 	var change = document.getElementsByClassName("button_fav")[0];
-    if (change.innerHTML=="Favorite") change.innerHTML = "Remove from favorite";
-    else change.innerHTML = "Favorite";
+    if (change.innerHTML=="Favorite ") change.innerHTML = "Remove from favorite";
+    else change.innerHTML = "Favorite ";
 	
     const product = parseProduct();
     if (product) {
