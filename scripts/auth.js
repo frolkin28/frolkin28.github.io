@@ -23,7 +23,6 @@ const errorSignInPass = document.getElementById('error-signin-pass');
 
 signUpForm.addEventListener("submit", handleSignUpEvent, false);
 signInForm.addEventListener("submit", handleSignInEvent, false);
-console.log(signInForm);
 
 
 function handleSignUpEvent(event) {
@@ -84,7 +83,6 @@ function handleSignUpEvent(event) {
 }
 
 function handleSignInEvent(event) {
-  console.log('validate');
   event.preventDefault();
   let formValid = true;
 

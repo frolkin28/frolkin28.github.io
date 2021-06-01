@@ -24,7 +24,6 @@ function moveRight() {
 
 function showSlides(n) {
     const itemsPerSlide = getItemsPerSlide();
-    console.log(itemsPerSlide);
     const slides = document.getElementsByClassName('new-collection-item');
     Object.values(slides).map((item, index) => {
         if (index >= n && index < n + itemsPerSlide) {

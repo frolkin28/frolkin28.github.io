@@ -1,0 +1,130 @@
+@media only screen and (min-width: 1313px) {
+	.main-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		/* width: 100%; */
+        /* padding: 10%; */
+	}
+	.caption-block {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		/* width: 100%; */
+	}
+	.caption-block-first {
+		width: 100%;
+        /* justify-content: center;
+        align-items: center; */
+	}
+    .caption-block-first>h2 {
+		text-align: center;
+	}
+	.airsBig-block {
+		display: flex;
+		width: 100%;
+		margin: 20px 0px;
+	}
+	.pic-air {
+		flex: 2;
+	}
+	.select {
+		margin-top: -15px;
+		display: flex;
+		align-items: center;
+		color: #6E6E6E
+	}
+	select {
+		height: 20px;
+		border-style: none;
+		margin-right: 10px;
+		color: #6E6E6E
+	}
+	.price-block {
+		flex: 1;
+		justify-self: flex-end;
+	}
+	.text-block {
+		flex: 3;
+	}
+	.text-block>p {
+		color: #6E6E6E
+	}
+	.move-del-block {
+		text-align: center;
+	}
+	.move-del-block>a {
+		color: #6E6E6E;
+		margin-right: 25px;
+	}
+	hr {
+		border: 0;
+		clear: both;
+		display: block;
+		width: 100%;
+		background-color: #6E6E6E;
+		height: 0.5px;
+	}
+}
+
+@media only screen and (max-width: 1313px) {
+	.main-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 80%;
+	}
+	.caption-block-first>h2 {
+		text-align: center;
+	}
+	.caption-block-second>h2 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.airsBig-block {
+		display: flex;
+		width: 100%;
+	}
+	.pic-air {
+		width: 30%;
+	}
+	.select {
+		margin-top: -15px;
+		display: flex;
+		align-items: center;
+		color: #6E6E6E
+	}
+	select {
+		height: 20px;
+		border-style: none;
+		margin-right: 10px;
+		color: #6E6E6E
+	}
+	.text-block>p {
+		color: #6E6E6E
+	}
+	.price-block {
+		flex: 1;
+		justify-self: flex-end;
+	}
+	.price-block>h4 {
+		font-size: 10;
+	}
+	.move-del-block {
+		text-align: center;
+	}
+	.move-del-block>a {
+		color: #6E6E6E;
+		margin-right: 25px;
+	}
+	hr {
+		border: 0;
+		clear: both;
+		display: block;
+		width: 100%;
+		background-color: #6E6E6E;
+		height: 0.5px;
+	}
+}

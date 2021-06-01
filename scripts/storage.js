@@ -19,42 +19,73 @@ class Storage {
         this.cartProducts[element.id] = element;
         this.writeToLocalStorage(this.cartKey, this.cartProducts);
     }
+
     addToFavorites(element) {
         this.favoritesProducts[element.id] = element;
         this.writeToLocalStorage(this.favoritesKey, this.favoritesProducts);
     }
-}
 
+    removeFromCart(id) {
+        const cartProducts = this.loadFromLocalStorage(this.cartKey);
+        delete cartProducts[id.toString()];
+        this.writeToLocalStorage(this.cartKey, cartProducts);
+    }
 
-function handleAddToCart() {
-	var change = document.getElementsByClassName("button_cart")[0];
-    if (change.innerHTML=="Add to Bag") change.innerHTML = "Remove from Bag";
-    else change.innerHTML = "Add to Bag";
-		
-    const product = parseProduct();
-    if (product) {
-        const storage = new Storage();
-        storage.addToCart(product);
+    removeFromFavorites(id) {
+        const cartProducts = this.loadFromLocalStorage(this.favoritesKey);
+        delete cartProducts[id.toString()];
+        this.writeToLocalStorage(this.favoritesKey, cartProducts);
+    }
+
+    isProductInCart(id) {
+        const productsKeys = Object.keys(this.loadFromLocalStorage(this.cartKey));
+        return productsKeys.includes(id.toString());
+    }
+
+    isProductInFavorites(id) {
+        const productsKeys = Object.keys(this.loadFromLocalStorage(this.favoritesKey));
+        return productsKeys.includes(id.toString());
     }
 }
 
-function handleAddToFavorites() {
-	var change = document.getElementsByClassName("button_fav")[0];
-    if (change.innerHTML=="Favorite ") change.innerHTML = "Remove from favorite";
-    else change.innerHTML = "Favorite ";
-	
+
+function handleCart() {
     const product = parseProduct();
+    const storage = new Storage();
     if (product) {
-        const storage = new Storage();
-        storage.addToFavorites(product);
+        const isProductInCart = new Storage().isProductInCart(product.id);
+        if (isProductInCart) {
+            storage.removeFromCart(product.id);
+            changeCartButtonName("Add to bag");
+        } else {
+            storage.addToCart(product);
+            changeCartButtonName("Remove from bag");
+        }
+    }
+}
+
+function handleFavorites() {
+    const product = parseProduct();
+    const storage = new Storage();
+    if (product) {
+        const isProductInFavorites = new Storage().isProductInFavorites(product.id);
+        if (isProductInFavorites) {
+            storage.removeFromFavorites(product.id);
+            changeFavoritesButtonName("Add to bag");
+        } else {
+            storage.addToFavorites(product);
+            changeFavoritesButtonName("Remove from bag");
+        }
     }
 }
 
 
-function parseProductId(RawId) {
+function getProductId() {
+    const productIdElement = document.getElementById('productId');
+    const rawId = productIdElement.firstElementChild.textContent;
     const pattern = /Code:\s+(\d+)/;
-    if (RawId.match(pattern)) {
-        return Number(RawId.match(pattern)[1]);
+    if (rawId.match(pattern)) {
+        return Number(rawId.match(pattern)[1]);
     }
     return null;
 }
@@ -69,14 +100,11 @@ function parsePrice(RawPrice) {
 }
 
 function parseProduct() {
-    const productIdElement = document.getElementById('productId');
+    const id = getProductId();
     const imgElement = document.getElementById('image');
     const nameElement = document.getElementById('name');
     const priceElement = document.getElementById('price');
-    let id, image, name, price;
-    if (productIdElement) {
-        id = parseProductId(productIdElement.firstElementChild.textContent);
-    }
+    let image, name, price;
     if (imgElement) {
         image = imgElement.src;
     }
@@ -98,3 +126,33 @@ function parseProduct() {
         return null;
     }
 }
+
+
+function changeCartButtonName(name) {
+    const change = document.getElementsByClassName("button_cart")[0];
+    change.innerHTML = name;
+}
+
+
+function changeFavoritesButtonName(name) {
+    const change = document.getElementsByClassName("button_fav")[0];
+    change.innerHTML = name;
+}
+
+
+window.addEventListener('load', () => {
+    const id = getProductId()
+    const isProductInCart = new Storage().isProductInCart(id);
+    const isProductInFavorites = new Storage().isProductInFavorites(id);
+    if (isProductInCart) {
+        changeCartButtonName("Remove from bag");
+    } else {
+        changeCartButtonName("Add to bag");
+    }
+
+    if (isProductInFavorites) {
+        changeFavoritesButtonName("Remove from favorite");
+    } else {
+        changeFavoritesButtonName("Add to favorite")
+    }
+})
