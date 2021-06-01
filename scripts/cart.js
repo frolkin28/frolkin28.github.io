@@ -117,4 +117,10 @@ function handleRemove(id) {
     }
 }
 
+
+function handleCreateOrder() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || {};
+    if (Object.keys(cart).length) window.open('./checkout.html');
+}
+
 window.addEventListener('load', () => createCartProductNodes())
